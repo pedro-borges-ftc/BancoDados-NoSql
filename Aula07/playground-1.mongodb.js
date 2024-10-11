@@ -2,7 +2,7 @@
 use('mongodbVSCodePlaygroundDB');
 
 // Search for documents in the current collection.
-db.getCollection('vendas')
+var resultado = db.getCollection('vendas')
   .find(
     {
       /*
@@ -24,3 +24,6 @@ db.getCollection('vendas')
     * fieldB: -1 // descending
     */
   });
+
+  console.log("Resultado da consulta")
+  console.log(resultado)
