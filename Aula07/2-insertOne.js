@@ -8,3 +8,8 @@ db.getCollection('vendas').insertOne({
     "quantidade": 50,
     "data": "2024-09-21T09:00:00.000Z"
 });
+
+// Search for documents in the current collection.
+db.getCollection('vendas')
+  .find()
+  .sort();
