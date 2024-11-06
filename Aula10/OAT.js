@@ -5,9 +5,7 @@ use('mongodbVSCodePlaygroundDB');
 //Password = alunosUnex123
 //mongodb+srv://alunosunex:alunosUnex123@cluster-bdnosql.tg2ka.mongodb.net/
 
-db.getCollection('livros')
-.find()
-.sort();
+db.getCollection('livros').find().sort();
 
 /*
 
