@@ -9,6 +9,24 @@ db.getCollection('livros').find().sort();
 
 /*
 
+db.getCollection('livros').insertMany([
+  { "titulo": "Aula online", "autor": "FULANO DE TALZ", "ano": 2020, "categoria": "Futebol", "quantidade": 5 },
+]);
+
+db.getCollection('livros')
+.find({"autor": {$eq: "FULANO DE TALZ"}})
+.sort();
+
+const livrosPeuborg = db.livros.find({"autor": {$eq: "Peuborg"}}).count();
+console.log(`${livrosPeuborg} livros foram encontrados.`);
+
+//const livrosPeuborg = db.livros.find({"autor": {$eq: "Peuborg"}},{"autor":1,"titulo":1});
+const livrosPeuborg = db.livros.find({"autor": {$eq: "Peuborg"}}).toArray();
+console.log(typeof(livrosPeuborg))
+//console.log(livrosPeuborg);
+livrosPeuborg.forEach((livro, indice) => {
+  console.log(`livro ${indice + 1}: ${livro.titulo}`);
+});
 
 // Insert a few documents into the sales collection.
 db.getCollection('livros').insertMany([
