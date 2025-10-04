@@ -1,6 +1,32 @@
-// The current database to use.
+// The current database to use. --mongodbVSCodePlaygroundDB
 use('mongodbVSCodePlaygroundDB');
 
+// Search for documents in the current collection.
+db.getCollection('vendas')
+  .find(
+    {
+      /*
+      * Filter
+      * fieldA: value or expression
+      */
+    },
+    {
+      /*
+      * Projection
+      * _id: 0, // exclude _id
+      * fieldA: 1 // include field
+      */
+    }
+  )
+  .sort({
+    /*
+    * fieldA: 1 // ascending
+    * fieldB: -1 // descending
+    */
+  });
+
+
+/*
 // Create a new document in the collection.
 // Insert a few documents into the sales collection.
 db.getCollection('vendas').insertMany([
@@ -13,8 +39,4 @@ db.getCollection('vendas').insertMany([
   { 'item': 'Carne do Sol', 'preço': 7.5, 'quantidade': 10, 'data': new Date('2015-09-10T08:43:00Z') },
   { 'item': 'Queijo Provolone', 'preço': 100, 'quantidade': 5, 'data': new Date('2016-02-06T20:20:13Z') },
 ]);
-
-
-/*
-
 */
