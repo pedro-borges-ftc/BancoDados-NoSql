@@ -17,3 +17,22 @@ db.getCollection('vendas').insertMany([
 db.getCollection('vendas')
   .find()
   .sort();
+
+/*  
+// Insert a few documents into the sales collection.
+db.getCollection('ListaPresenca').insertMany([
+  { 'nome': 'Pedro dos Santos Borges', 'matricula': 23,  'data': new Date('2014-03-01T08:00:00Z') },
+  { 'nome': 'anthony kevin', 'matricula': 12,  'data': new Date('2014-03-01T08:00:00Z') },
+  { 'nome': 'eduardo silva', 'matricula': 34,  'data': new Date('2014-03-01T08:00:00Z') },
+  { 'nome': 'guilherme lavigne', 'matricula': 45,  'data': new Date('2014-03-01T08:00:00Z') },
+  { 'nome': 'gustavo muniz', 'matricula': 56,  'data': new Date('2014-03-01T08:00:00Z') },
+  { 'nome': 'joadson', 'matricula': 78,  'data': new Date('2014-03-01T08:00:00Z') },
+  { 'nome': 'matheus silva', 'matricula': 89,  'data': new Date('2014-03-01T08:00:00Z') },
+  { 'nome': 'natanael jesus', 'matricula': 90,  'data': new Date('2014-03-01T08:00:00Z') }
+]);
+
+// Search for documents in the current collection.
+db.getCollection('ListaPresenca')
+  .find()
+  .sort();
+  */
