@@ -16,8 +16,8 @@ db.livros.find({
 
 Exercício 2
 db.livros.find({
-  "categoria": { $in: ["Futebol", "História"] },
-  "autor": { $ne: "Peuborg" }
+  "titulo": { $regex: "^Primeiro" },
+  "autor": { $regex: "^Peu" }
 });
 
 Exercício 3
