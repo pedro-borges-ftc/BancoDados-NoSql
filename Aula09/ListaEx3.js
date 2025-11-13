@@ -5,7 +5,12 @@ use('mongodbVSCodePlaygroundDB');
 //Password = alunosUnex123
 //mongodb+srv://alunosunex:alunosUnex123@cluster-bdnosql.tg2ka.mongodb.net/
 
-db.getCollection('livros').find().sort();
+db.livros.find({
+  "ano": { $gte: 2019, $lte: 2023 },
+  "autor": { $regex: /SANTOS/, $options: 'i' }
+});
+
+
 
 /*
 

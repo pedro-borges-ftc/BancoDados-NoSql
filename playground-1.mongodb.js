@@ -17,6 +17,6 @@ db.ListaPresenca.updateOne(
 */
 
 // Search for documents in the current collection.
-db.getCollection('ListaPresenca')
+db.getCollection('livros')
   .find()
   .sort();
