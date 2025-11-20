@@ -1,22 +1,36 @@
 // The current database to use. --mongodbVSCodePlaygroundDB
 use('mongodbVSCodePlaygroundDB');
 
-/*
-db.ListaPresenca.updateOne(
-  {_id: new ObjectId('68f97aa63d27e31afb783916')},
-  {
-    '$set': {
-      nome: "Pedro dos Santos Borges",
-      matricula: 17623,
-      data: {
-      "$date": "2025-10-22T22:00:00Z"
-      },
-    }
-  }
-);
-*/
+db.livros.aggregate([
+  { $group: {_id: "$autor",totalLivros: { $sum: 1 } } },
+  { $match: { totalLivros: { $gt: 1 } }},
+  {$limit: 5}
+]);
 
-// Search for documents in the current collection.
-db.getCollection('livros')
-  .find()
-  .sort();
+/*
+
+
+//ex1
+db.livros.aggregate([
+  // Filtrar as categorias com mais de 5 livros
+  { $group: { _id: "$categoria", totalLivros: { $sum: 1 }, mediaExemplares: { $avg: "$quantidade" } } },
+  { $match: { totalLivros: { $gt: 5 } } },
+  // Ordenar pela média de exemplares de forma decrescente
+  { $sort: { mediaExemplares: -1 } }
+]);
+
+//ex2
+db.livros.aggregate([
+  {
+    $group: {
+      _id: "$autor",
+      totalLivros: { $sum: 1 }
+    }},
+  {
+    $match: {
+      totalLivros: { $gt: 2 }
+    }},
+  {$limit: 5}
+]);
+
+*/
