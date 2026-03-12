@@ -1,3 +1,7 @@
+use('mongodbVSCodePlaygroundDB');
+db.getCollection('ListaPresenca').aggregate();
+
+
 // The current database to use. --mongodbVSCodePlaygroundDB
 use('mongodbVSCodePlaygroundDB');
 
