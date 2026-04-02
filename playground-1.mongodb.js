@@ -33,4 +33,19 @@ db.livros.aggregate([
   {$limit: 5}
 ]);
 
+// MongoDB Playground
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// The current database to use.
+use('mongodbVSCodePlaygroundDB');
+
+// Create a new document in the collection.
+db.getCollection('ListaPresenca').insertOne(
+{
+  nome: 'Dom Pedro II',
+  matricula: NumberInt('17623'),
+  data: ISODate('2026-04-01T21:00:00.000Z')
+}
+);
+
 */
