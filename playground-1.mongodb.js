@@ -1,3 +1,6 @@
+//Select * from posts
+db.getCollection('posts').find({});
+
 // The current database to use. --mongodbVSCodePlaygroundDB
 use('mongodbVSCodePlaygroundDB');
 
