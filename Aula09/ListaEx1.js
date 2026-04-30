@@ -18,7 +18,7 @@ db.livros.find({
 Exercício 2
 Encontrar livros de não-ficção com quantidade maior que 5 e publicados após 2015.
 db.livros.find({ 
-  categoria: "Não-Ficção", 
+  categoria: { $ne: "Ficção Científica"}, 
   quantidade: { $gt: 5 }, 
   ano: { $gt: 2015 } 
 })
